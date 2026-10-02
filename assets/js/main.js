@@ -135,21 +135,24 @@ const workSwiper = new Swiper('.work__swiper', {
 });
 
 /*=============== SWIPER — TESTIMONIALS ===============*/
+/*=============== SWIPER — TESTIMONIALS ===============*/
 const testimonialSwiper = new Swiper('.testimonial__swiper', {
   slidesPerView: 1,
-  spaceBetween: 20,
+  spaceBetween: 0,
   loop: true,
+
   autoplay: {
     delay: 4500,
     disableOnInteraction: false,
     pauseOnMouseEnter: true,
   },
+
   pagination: {
     el: '.testimonial__pagination',
     clickable: true,
   },
-  effect: 'fade',
-  fadeEffect: { crossFade: true },
+
+  speed: 600,
 });
 
 /*=============== WORK FILTER BUTTONS ===============*/
