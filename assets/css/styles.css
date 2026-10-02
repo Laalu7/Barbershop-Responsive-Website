@@ -851,16 +851,41 @@ img {
 }
 
 /* Testimonials */
+/*=============== TESTIMONIALS ===============*/
+
 .service__testimonial {
   background: var(--container-color);
   padding: 2rem;
   border-radius: 1.5rem;
   box-shadow: 0 8px 32px var(--shadow-color);
+
+  /* Important for Swiper inside CSS Grid */
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
 }
 
-.testimonial__swiper { padding-bottom: 3rem; }
+.testimonial__swiper {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  padding-bottom: 3rem;
+}
+
+.testimonial__swiper .swiper-wrapper {
+  width: 100%;
+}
+
+.testimonial__swiper .swiper-slide {
+  width: 100% !important;
+  min-width: 100%;
+  box-sizing: border-box;
+}
 
 .testimonial__card {
+  width: 100%;
+  box-sizing: border-box;
   background: var(--body-color);
   padding: 2rem;
   border-radius: 1.25rem;
@@ -913,13 +938,27 @@ img {
   font-size: var(--small-font-size);
 }
 
-.testimonial__pagination .swiper-pagination-bullet {
-  background: var(--border-color);
-  opacity: 1;
+@media screen and (min-width: 576px) {
+  .service__container {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .service__prices,
+  .service__testimonial {
+    min-width: 0;
+    width: 100%;
+  }
 }
 
-.testimonial__pagination .swiper-pagination-bullet-active {
-  background: var(--first-color);
+@media screen and (max-width: 575px) {
+  .service__testimonial {
+    width: 100%;
+    padding: 1.25rem;
+  }
+
+  .testimonial__card {
+    padding: 1.5rem;
+  }
 }
 
 /*=============== EXPERTS SECTION ===============*/
